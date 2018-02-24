@@ -1,0 +1,56 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+   <session-factory>
+   
+      <property name = "hibernate.dialect">
+       org.hibernate.dialect.HSQLDialect
+      </property>
+      
+      <property name = "hibernate.connection.driver_class">
+        org.hsqldb.jdbcDriver
+      </property>
+      
+      <!-- Assume test is the database name -->
+      
+      <property name = "hibernate.connection.url">
+         jdbc:hsqldb:hsql://localhost/
+      </property>
+      
+      <property name = "hibernate.connection.username">
+         SA
+      </property>
+      
+      <property name = "hibernate.connection.password">
+      </property>
+       <property name="show_sql">true</property>
+      <!-- <property name="format_sql">false</property> -->
+        
+        <!--  <property name = "hibernate.current_session_context_class">thread</property>  -->
+      
+      <property name = "hbm2ddl.auto">create-drop</property>
+      
+      <!-- List of XML mapping files -->
+     <!-- <mapping resource = "Product.hbm.xml"/>-->
+      <!-- Annotation mapping class -->
+		<!-- <mapping class="com.scp.hibernate.hib.Product"/>  -->
+		<!--  for inheritance -->
+   <!--  <mapping class="com.scp.hibernate.hib.A"/>
+      <mapping class="com.scp.hibernate.hib.B"/>
+      <mapping class="com.scp.hibernate.hib.C"/>
+       -->
+        <!-- For Hibernate onetooneunidi mapping -->
+     <!--  <mapping class="com.scp.hibernate.onetooneuni.Student1"/>
+      <mapping class="com.scp.hibernate.onetooneuni.Address1"/>
+        -->
+      <!-- For Hibernate onetoonebidir mapping -->
+      <mapping class="com.scp.hibernate.onetoonebidirect.Employee"/>
+      <mapping class="com.scp.hibernate.onetoonebidirect.Address"/>
+      
+       <!--for hibernate many to one   -->
+       <!--  <mapping class="com.scp.hibernate.hib.StudentManyOne"/>
+      <mapping class="com.scp.hibernate.hib.University"/> -->
+     
+   </session-factory>
+</hibernate-configuration>
